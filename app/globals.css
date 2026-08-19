@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 210 40% 98%;
+  --foreground: 215 28% 17%;
+  --muted: 210 20% 94%;
+  --muted-foreground: 215 16% 45%;
+  --border: 210 20% 90%;
+  --input: 210 20% 90%;
+  --ring: 200 90% 45%;
+  --radius: 24px;
+
+  --brand-deep: 220 75% 28%;
+  --brand-sky: 200 90% 45%;
+  --brand-green: 146 54% 38%;
+  --brand-yellow: 44 92% 56%;
+  --brand-purple: 268 60% 45%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+    font-family: var(--font-sans), ui-sans-serif, system-ui;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-slate-900;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display), var(--font-sans), ui-sans-serif, system-ui;
+  }
+
+  .heading-backdrop-topic,
+  .heading-backdrop-super {
+    position: relative;
+    display: inline-block;
+  }
+
+  .heading-backdrop-topic::before,
+  .heading-backdrop-super::before {
+    content: "";
+    position: absolute;
+    inset: -0.55em -1.05em;
+    border-radius: 999px;
+    z-index: -1;
+    filter: blur(34px);
+    opacity: 0.95;
+  }
+
+  .heading-backdrop-topic::before {
+    background:
+      radial-gradient(
+        closest-side,
+        rgba(245, 200, 76, 0.7),
+        rgba(245, 200, 76, 0.35),
+        rgba(245, 200, 76, 0)
+      );
+  }
+
+  .heading-backdrop-super::before {
+    background:
+      radial-gradient(
+        closest-side,
+        rgba(245, 200, 76, 0.65),
+        rgba(245, 200, 76, 0.32),
+        rgba(245, 200, 76, 0)
+      );
+  }
+}

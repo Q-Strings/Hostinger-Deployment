@@ -1,0 +1,12 @@
+{
+  "buildCommand": "npm install && npm run build",
+  "startCommand": "npm start",
+  "nodeVersion": "18.17.0",
+  "env": {
+    "NODE_ENV": "production",
+    "HOSTNAME": "0.0.0.0"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  }
+}
